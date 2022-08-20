@@ -30,20 +30,24 @@
     </nav>
 
     <div class="container header">
-        <div class="flex">
+        <div class="header-flex">
             <div class="img-container">
-                <img class="header-img" src="css/images/me.png" alt="placeholder img">
+                <img class="header-img" src="css/images/me.jpg" alt="placeholder img">
             </div>
             <div class="header-text">
                 <p class="hello">Hello, my name is</p>
                 <h1 class="title">Matt Young</h1>
-                <hr class="line">
-                <h2 class="subtitle">I'm a Front-End Web Developer based in Glasgow, Scotland</h2>
+                <h2 class="subtitle">I'm a <span class="subtitle-underline">Front-End Web Developer</span> based in Glasgow, Scotland</h2>
                 <div class="icons">
-                    <i class="fa-brands fa-github fa-2x"><a href="https://github.com/mattyoung7"></a></i>
-                    <i class="fa-solid fa-envelope fa-2x"><a href="#contact-me"></a></i>
+                    <i class="fa-brands fa-github fa-2x mobile-icon"><a href="https://github.com/mattyoung7"></a></i>
+                    <i class="fa-solid fa-envelope fa-2x mobile-icon"><a href="#contact-me"></a></i>
+                    <i class="fa-brands fa-github fa-3x desktop-icon"><a href="https://github.com/mattyoung7"></a></i>
+                    <i class="fa-solid fa-envelope fa-3x desktop-icon"><a href="#contact-me"></a></i>
                 </div>
             </div>
+        </div>
+        <div class="scroll">
+            <a href="#about-me"><i class="fa-solid fa-circle-chevron-down fa-3x"></i></a>
         </div>
     </div>
 
@@ -59,8 +63,6 @@
                     I'm a 26 year old based just outside of Glasgow, Scotland with 5+ years of corporate finance
                     experience
                     and a passion for web development.<br><br>
-                    When I'm not coding, I can usually be found watching football (ours <i>and</i> american), gaming, or
-                    socialising with friends.<br><br>
                     Over the past year I've been learning web development in my free time with the hopes of turning this
                     hobby into a full-time career.<br><br>
                     I currently have a working knowledge of the following technologies:</p>
@@ -103,8 +105,7 @@
                                 <p>Responsive Landing Page using Figma files for reference</p>
                                 <p>HTML • CSS</p>
                                 <div class="card-links">
-                                    <i class="fa-brands fa-github fa-2x"><a
-                                            href="https://github.com/mattyoung7"></a></i>
+                                    <i class="fa-brands fa-github fa-2x"><a href="https://github.com/mattyoung7"></a></i>
                                     <i class="fa-solid fa-link fa-2x"><a href=""></a></i>
                                 </div>
                             </div>
@@ -137,9 +138,9 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-image">
+                        <div class="card-header">
                             <figure class="image">
-                                <img src="css/images/site-3.png" alt="site-1">
+                                <img class="card-image" src="css/images/site-3.png" alt="site-1">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -150,8 +151,7 @@
                             </div>
 
                             <div class="content">
-                                <p>Expenses Chart utilising data taken from a JSON file and populated in a bar graph
-                                    using Chart.js</p>
+                                <p>Expenses Chart utilising data taken from a JSON file and using Chart.js</p>
                                 <p>HTML • CSS • Javascript • Chart.js</p>
                                 <div class="card-links">
                                     <i class="fa-brands fa-github fa-2x"><a
@@ -167,7 +167,7 @@
     </section>
 
     <section class="contact" id="contact">
-        <div class="contact-container">
+        <div class="container contact-container">
 
             <div class="section-header">
                 <h3 class="section-title">contact me</h3>

@@ -11,20 +11,33 @@ img {
   max-width: 100%;
 }
 
-.flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+@-webkit-keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .section-title {
-  width: 50%;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  border-bottom: 6px solid #00BDAA;
+  -webkit-text-decoration: underline #FF2ED9;
+          text-decoration: underline #FF2ED9;
 }
 
 .paragraph {
@@ -34,7 +47,7 @@ img {
 }
 
 .nav-btn {
-  color: #00BDAA;
+  color: #FF2ED9;
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -49,7 +62,7 @@ img {
   }
 }
 .navbar {
-  background-color: #00BDAA;
+  background-color: #7B05FF;
   height: 5rem;
   position: -webkit-sticky;
   position: sticky;
@@ -61,7 +74,7 @@ img {
   z-index: 99;
 }
 .navbar .nav-list {
-  background-color: #00BDAA;
+  background-color: #7B05FF;
   list-style-type: none;
   text-transform: lowercase;
   font-size: 1rem;
@@ -105,7 +118,7 @@ img {
   background-color: hsl(100deg, 100%, 100%);
 }
 .navbar .nav-list .nav-contact:hover a {
-  color: #00BDAA;
+  color: #7B05FF;
 }
 .navbar .nav-list[data-visible=true] {
   transform: translateX(0%);
@@ -116,7 +129,7 @@ img {
     width: 100%;
     justify-content: right;
     padding: 1rem;
-    border-bottom: 1px solid #00BDAA;
+    border-bottom: 1px solid #7B05FF;
   }
   .navbar .nav-list {
     font-size: 1.1rem;
@@ -134,7 +147,7 @@ img {
 }
 @media screen and (max-width: 599px) {
   .navbar .nav-list .nav-contact {
-    border: 2px solid #00BDAA;
+    border: 2px solid #7B05FF;
     width: 50%;
     margin: 0 auto;
   }
@@ -146,43 +159,90 @@ img {
   padding-top: 7rem;
   height: 100vh;
 }
+.header .header-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .header .header-img {
-  max-width: 200px;
-  margin-bottom: 3rem;
+  max-width: 300px;
+  -webkit-animation: slide-up 2s;
+          animation: slide-up 2s;
+  margin-bottom: 2rem;
 }
 .header .hello,
 .header .subtitle {
   font-size: 1rem;
   font-weight: 700;
 }
+.header .hello {
+  opacity: 0;
+  -webkit-animation: slide-up 2s;
+          animation: slide-up 2s;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
 .header .title {
+  padding: 1rem 0;
+  opacity: 0;
   font-size: 3rem;
   font-weight: 800;
-  color: #00BDAA;
-  margin: 0 0 1rem;
+  color: #7B05FF;
+  -webkit-animation: slide-up 2s;
+          animation: slide-up 2s;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
-.header .line {
-  margin: 1rem auto 2rem;
-  border: 1px solid #00BDAA;
-  width: 50%;
+.header .subtitle {
+  line-height: 1.5;
+  opacity: 0;
+  -webkit-animation: slide-up 1.5s;
+          animation: slide-up 1.5s;
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+.header .subtitle-underline {
+  -webkit-text-decoration: underline 3px #7B05FF;
+          text-decoration: underline 3px #7B05FF;
 }
 .header .icons {
-  color: #00BDAA;
+  opacity: 0;
+  color: #7B05FF;
+  -webkit-animation: slide-up 1s;
+          animation: slide-up 1s;
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
 }
 .header .icons i {
   padding: 0 0.5rem;
 }
+.header .scroll {
+  opacity: 0;
+  position: absolute;
+  bottom: 5%;
+  left: 48%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  -webkit-animation: slide-up 2s;
+          animation: slide-up 2s;
+  -webkit-animation-delay: 4000ms;
+          animation-delay: 4000ms;
+}
+.header .scroll i {
+  color: #7B05FF;
+}
 
 .about-me,
-.work,
-.contact {
-  padding: 5rem 1rem 4rem;
+.work {
+  padding: 5rem 2rem 4rem;
   text-align: left;
 }
 
 .about-me {
   color: white;
-  background-color: #477470;
+  background-color: #5001aa;
 }
 .about-me .about-me-skills {
   text-align: center;
@@ -195,11 +255,16 @@ img {
 }
 
 .work .work-projects {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 .work .card {
   color: hsl(100deg, 100%, 100%);
-  background-color: #477470;
+  background-color: #5001aa;
+  text-align: center;
+  max-width: 25rem;
+  margin: auto;
 }
 .work .card .card-title {
   font-size: 1.2rem;
@@ -212,17 +277,24 @@ img {
 }
 
 .contact {
-  padding: 6rem 1rem 1rem;
+  padding: 4rem 1rem 1rem;
   text-align: left;
-  background-color: #477470;
+  background-color: #5001aa;
   color: hsl(100deg, 100%, 100%);
+}
+.contact .section-header {
+  margin-bottom: 1rem;
+}
+.contact .field {
+  margin-bottom: 1rem;
 }
 .contact .label {
   color: hsl(100deg, 100%, 100%);
+  margin-bottom: 0.2rem;
 }
 .contact .input,
 .contact .textarea {
-  background-color: #304e4c;
+  background-color: #44038F;
   color: hsl(100deg, 100%, 100%);
   font-weight: 500;
   border: none;
@@ -283,12 +355,90 @@ img {
 }
 .contact .submit {
   background-color: hsl(100deg, 100%, 100%);
-  color: #477470;
+  color: #7B05FF;
   font-weight: 700;
   font-size: 1rem;
 }
 .contact .copyright {
-  margin: 4rem auto 0;
+  margin: 6rem auto 0;
   font-size: 0.8rem;
   text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .header .icons .desktop-icon {
+    display: none;
+  }
+  .header .scroll {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .header {
+    padding-top: 15rem;
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-title {
+    font-size: 3rem;
+  }
+  .paragraph {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+  .header {
+    margin: auto;
+    height: 100vh;
+  }
+  .header .header-flex {
+    flex-direction: row;
+    text-align: left;
+    gap: 7.5rem;
+  }
+  .header .header-img {
+    max-width: 500px;
+    margin-bottom: 0;
+  }
+  .header .hello,
+.header .subtitle {
+    font-size: 1.5rem;
+  }
+  .header .title {
+    font-size: 4.5rem;
+    margin: 1.5rem 0;
+  }
+  .header .line {
+    display: none;
+  }
+  .header .icons .mobile-icon {
+    display: none;
+  }
+  .about-me,
+.work {
+    padding: 10rem;
+  }
+  .work .work-projects {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .work .card {
+    margin: auto;
+  }
+  .work .card .card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .work .card .card-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .contact {
+    padding: 10rem 0 2rem;
+  }
+  .contact .contact-container {
+    width: 60%;
+  }
 }/*# sourceMappingURL=styles.css.map */
